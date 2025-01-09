@@ -1,17 +1,19 @@
 import { ActionChangeFlowRunStateFields } from "./action-change-flow-run-state-fields";
-import type { ActionsSchema } from "./action-type-schemas";
+import type { ActionType } from "./action-type-schemas";
 import { AutomationsSelectStateFields } from "./automations-select-state-fields";
 
 type ActionTypeAdditionalFieldsProps = {
-	actionType: ActionsSchema["type"];
+	actionType: ActionType;
+	index: number;
 };
 
 export const ActionTypeAdditionalFields = ({
 	actionType,
+	index,
 }: ActionTypeAdditionalFieldsProps) => {
 	switch (actionType) {
 		case "change-flow-run-state":
-			return <ActionChangeFlowRunStateFields />;
+			return <ActionChangeFlowRunStateFields index={index} />;
 		case "run-deployment":
 		case "pause-deployment":
 		case "resume-deployment":
@@ -23,9 +25,9 @@ export const ActionTypeAdditionalFields = ({
 		case "resume-work-pool":
 			return <div>TODO Work pool</div>;
 		case "pause-automation":
-			return <AutomationsSelectStateFields action="Pause" />;
+			return <AutomationsSelectStateFields action="Pause" index={index} />;
 		case "resume-automation":
-			return <AutomationsSelectStateFields action="Resume" />;
+			return <AutomationsSelectStateFields action="Resume" index={index} />;
 		case "send-notification":
 			return <div>TODO send notification</div>;
 		case "cancel-flow-run":

@@ -15,9 +15,8 @@ import {
 	FormLabel,
 } from "@/components/ui/form";
 import { useFormContext } from "react-hook-form";
-import { ActionsSchema } from "./action-type-schemas";
+import { type ActionType, type ActionsSchema } from "./action-type-schemas";
 
-type ActionType = ActionsSchema["type"];
 const AUTOMATION_ACTION_TYPES: Record<ActionType, string> = {
 	"cancel-flow-run": "Cancel a flow run",
 	"suspend-flow-run": "Suspend a flow run",
@@ -35,12 +34,12 @@ const AUTOMATION_ACTION_TYPES: Record<ActionType, string> = {
 	"send-notification": "Send a notification",
 };
 
-export const ActionTypeSelect = () => {
-	const form = useFormContext();
+export const ActionTypeSelect = ({ index }: { index: number }) => {
+	const form = useFormContext<ActionsSchema>();
 	return (
 		<FormField
 			control={form.control}
-			name="type"
+			name={`actions.${index}.type`}
 			render={({ field }) => (
 				<FormItem>
 					<FormLabel>Action Type</FormLabel>

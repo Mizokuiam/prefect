@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Automation } from "@/api/automations";
-import { UNASSIGNED } from "@/components/automations/automations-wizard/action-step/action-type-schemas";
+import { UNASSIGNED } from "@/components/automations/automations-wizard/actions-step/action-type-schemas";
 import { createFakeAutomation } from "@/mocks";
 import { useState } from "react";
 import {
