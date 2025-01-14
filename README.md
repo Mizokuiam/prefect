@@ -1,3 +1,8 @@
+![GitHub stars](https://img.shields.io/github/stars/Mizokuiam/prefect)
+![GitHub forks](https://img.shields.io/github/forks/Mizokuiam/prefect)
+![GitHub issues](https://img.shields.io/github/issues/Mizokuiam/prefect)
+![GitHub license](https://img.shields.io/github/license/Mizokuiam/prefect)
+
 <p align="center"><img src="https://github.com/PrefectHQ/prefect/assets/3407835/c654cbc6-63e8-4ada-a92a-efd2f8f24b85" width=1000></p>
 
 <p align="center">
